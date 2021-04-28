@@ -1,0 +1,41 @@
+
+
+import java.util.Scanner;
+
+public class Homework5Solution {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		
+		System.out.println("Enter your age");
+		int age = keyboard.nextInt();
+		
+		String movieRating = "";
+		
+		if(age < 0) {
+			System.out.println("Error. Age cannot be less than 0.");
+		}
+		else if(age >= 0 && age <= 5) {
+			movieRating = "G";
+		}
+		else if(age >= 6 && age <= 12) {
+			movieRating = "G and PG";
+		}
+		else if(age >= 13 && age <= 16) {
+			movieRating = "G,PG, and PG-13";
+		}
+		else {
+			movieRating = "G,PG,PG-13, and R";
+		}
+		
+		if(age >= 0 && age < 17) {
+			System.out.println("You will not be able to purchase an R rated ticket without an accompanying adult");
+		}
+		
+		if(age >= 0) {
+			System.out.println("The most appropriate movie ratings for you are: " + movieRating);
+		}
+
+	}
+
+}
